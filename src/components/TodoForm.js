@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
+import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 export default class TodoForm extends Component {
     state = {
@@ -15,7 +18,7 @@ export default class TodoForm extends Component {
     };
     handleChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value,
+            [e.target.id]: e.target.value,
         });
     };
     handleSubmit = (e) => {
@@ -26,9 +29,20 @@ export default class TodoForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label htmlFor="content"></label>
-                <input type="text" name="content" value={this.state.content} onChange={this.handleChange} />
-                <input type="submit" />
+                <TextField
+                    fullWidth
+                    id="content"
+                    label="Anything?"
+                    value={this.state.content}
+                    onChange={this.handleChange}
+                    InputProps = {{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <AddCircleIcon color="primary"/>
+                            </InputAdornment>
+                        )
+                    }}
+                />
             </form>
         );
     }
