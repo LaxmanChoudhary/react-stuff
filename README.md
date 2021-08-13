@@ -1,4 +1,4 @@
-## todo-basic
+## notes
 ### uses
 - [x] React class component  
 - [x] React functional component  
@@ -7,7 +7,7 @@
 - [x] Event handlers  
 - [x] form  
 - [x] material-ui  
-- router
+- [x] router
+- [x] endpoint data fetch
 - redux
 - animations
-- server
