@@ -11,3 +11,8 @@
 - [x] endpoint data fetch
 - redux
 - animations
+
+### additional requirements
+- json-server for test  
+`npm install json-server`  
+`json-server --watch data/db.json --port 8000`
