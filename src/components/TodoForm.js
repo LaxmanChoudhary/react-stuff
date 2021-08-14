@@ -6,7 +6,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 export default class TodoForm extends Component {
     state = {
         content: "",
-        id: 2,
+        id: 3,
     };
     resetPlus = () => {
         let id = this.state.id;
