@@ -1,11 +1,25 @@
-import React from "react";
+import { createTheme, ThemeProvider } from "@material-ui/core";
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Layout from "./components/Layout";
+import CreateNote from "./pages/CreateNote";
+import Notes from "./pages/Notes";
 
-function App() {
-  return (
-    <div>
-      <h1>App here</h1>
-    </div>
-  );
+const theme = createTheme();
+
+export default class App extends Component {
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Notes} />
+              <Route path="/create" component={CreateNote} />
+            </Switch>
+          </Layout>
+        </BrowserRouter>
+      </ThemeProvider>
+    );
+  }
 }
-
-export default App;
