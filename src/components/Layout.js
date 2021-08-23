@@ -48,7 +48,6 @@ const paths = [
 const Layout = ({ children }) => {
   const classes = useStyles()
   const history = useHistory()
-
   const today = format(new Date(), 'do MMMM yyy')
 
   return (

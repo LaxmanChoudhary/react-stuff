@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import React from "react";
 import { useState } from "react";
+import { dbStore } from "../firestore/firestore-config";
 
 const CreateNote = (props) => {
   const [title, setTitle] = useState("");
@@ -25,11 +26,18 @@ const CreateNote = (props) => {
   });
   const classes = useStyles();
   const addTask = (newTask) => {
-    fetch("http://localhost:8000/tasks", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newTask),
-    }).then(() => props.history.push("/"));
+    dbStore
+      .collection("notes")
+      .add(newTask)
+      .then((ref) => props.history.push("/"))
+      .catch((error) => {
+        console.error("Error", error)
+      })
+    // fetch("http://localhost:8000/tasks", {
+    //   method: "POST",
+    //   headers: { "content-type": "application/json" },
+    //   body: JSON.stringify(newTask),
+    // }).then(() => props.history.push("/"));
   };
   const handleSubmit = (e) => {
     e.preventDefault();

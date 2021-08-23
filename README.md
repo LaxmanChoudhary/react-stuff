@@ -16,3 +16,6 @@
 - json-server for test  
 `npm install json-server`  
 `json-server --watch data/db.json --port 8000`
+
+### setup your firebaseConfig
+- change firebaseConfig to your config from firebase
