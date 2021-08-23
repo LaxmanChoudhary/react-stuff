@@ -16,5 +16,5 @@ deploy:
     keep_history: true
     on:
       branch:
-        notes
+        main
     token: $GITHUB_TOKEN
