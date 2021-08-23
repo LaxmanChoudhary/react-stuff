@@ -1,0 +1,20 @@
+language: node_js
+os:
+  - linux
+dist: xenial
+node_js:
+  - lts/*
+install:
+  - npm ci
+script:
+  - npm run build
+deploy: 
+    provider: pages
+    strategy: git
+    skip_cleanup: true
+    local_dir: build
+    keep_history: true
+    on:
+      branch:
+        notes
+    token: $GITHUB_TOKEN
