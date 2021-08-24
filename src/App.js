@@ -14,8 +14,8 @@ export default class App extends Component {
         <HashRouter>
           <Layout>
             <Switch>
-              <Route exact path="/react-stuff/" component={Notes} />
-              <Route path="/react-stuff/create" component={CreateNote} />
+              <Route exact path="/" component={Notes} />
+              <Route path="/create" component={CreateNote} />
             </Switch>
           </Layout>
         </HashRouter>
