@@ -7,7 +7,7 @@ import { Typography } from "@material-ui/core";
 const breakpointColumnsObj = {
   default: 3,
   1100: 2,
-  800: 1,
+  800: 2,
 };
 
 function Notes() {
