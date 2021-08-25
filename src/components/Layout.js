@@ -45,14 +45,15 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: theme.mixins.toolbar,
   page: {
-    width: "100%",
+    // width: "100%",
+    flexGrow: 1,
     padding: theme.spacing(3),
   },
   SpeedDial: {
     [theme.breakpoints.up("sm")]: {
       display: "none",
     },
-    position: "absolute",
+    position: "fixed",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
   },

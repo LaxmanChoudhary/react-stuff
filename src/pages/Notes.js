@@ -54,6 +54,7 @@ function Notes() {
   } else {
     return (
       <Masonry
+        cellSpacing='1'
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
