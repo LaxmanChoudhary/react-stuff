@@ -8,6 +8,7 @@ const breakpointColumnsObj = {
   default: 3,
   1100: 2,
   800: 2,
+  700: 1,
 };
 
 function Notes() {
@@ -54,7 +55,6 @@ function Notes() {
   } else {
     return (
       <Masonry
-        cellSpacing='1'
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
